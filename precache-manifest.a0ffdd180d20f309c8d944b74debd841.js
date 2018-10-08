@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/pwa-testing/static/js/runtime~main.e4022338.js"
   },
   {
-    "revision": "893b34874e102094942f",
-    "url": "/pwa-testing/static/js/main.893b3487.chunk.js"
+    "revision": "f5d69c5f24be98df525c",
+    "url": "/pwa-testing/static/js/main.f5d69c5f.chunk.js"
   },
   {
     "revision": "6105a37ce77693a684b2",
     "url": "/pwa-testing/static/js/1.6105a37c.chunk.js"
   },
   {
-    "revision": "893b34874e102094942f",
+    "revision": "f5d69c5f24be98df525c",
     "url": "/pwa-testing/static/css/main.2831e0fd.chunk.css"
   },
   {
-    "revision": "95f2196d36ee953103c4b03c8cb49a2b",
+    "revision": "a2d26b42d1da5f5cf1a21dabb63a7689",
     "url": "/pwa-testing/index.html"
   }
 ];
