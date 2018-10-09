@@ -1,7 +1,7 @@
 {
   "main.css": "/pwa-testing/static/css/main.b24bdc00.chunk.css",
-  "main.js": "/pwa-testing/static/js/main.88ec3419.chunk.js",
-  "main.js.map": "/pwa-testing/static/js/main.88ec3419.chunk.js.map",
+  "main.js": "/pwa-testing/static/js/main.590f2fb7.chunk.js",
+  "main.js.map": "/pwa-testing/static/js/main.590f2fb7.chunk.js.map",
   "static/js/1.bf1e87ab.chunk.js": "/pwa-testing/static/js/1.bf1e87ab.chunk.js",
   "static/js/1.bf1e87ab.chunk.js.map": "/pwa-testing/static/js/1.bf1e87ab.chunk.js.map",
   "runtime~main.js": "/pwa-testing/static/js/runtime~main.e4022338.js",
@@ -9,6 +9,6 @@
   "static/media/logo.svg": "/pwa-testing/static/media/logo.5d5d9eef.svg",
   "static/css/main.b24bdc00.chunk.css.map": "/pwa-testing/static/css/main.b24bdc00.chunk.css.map",
   "index.html": "/pwa-testing/index.html",
-  "precache-manifest.c9a0ffe44671dae780647c20455be7f8.js": "/pwa-testing/precache-manifest.c9a0ffe44671dae780647c20455be7f8.js",
+  "precache-manifest.c787d618a28309a1cde7529c839d2553.js": "/pwa-testing/precache-manifest.c787d618a28309a1cde7529c839d2553.js",
   "service-worker.js": "/pwa-testing/service-worker.js"
 }
