@@ -3,20 +3,36 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  state = {
+    event: ''
+  };
+
+  componentDidMount() {
+    document.addEventListener('message', this.handlePostMessage);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('message', this.handlePostMessage);
+  }
+
+  handlePostMessage = event => {
+    const { data } = event;
+    const incomingEvent = JSON.parse(data);
+
+    if (incomingEvent.type === 'SCAN') {
+      this.setState({
+        event: incomingEvent.payload
+      });
+    }
+  };
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>We should really change this code!!!</p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            This should push an update to the app.
-          </a>
+          <p>Bharath is a cool guy.</p>
+          <span>Most recent event {this.state.event}</span>
         </header>
       </div>
     );
