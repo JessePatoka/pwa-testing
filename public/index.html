@@ -35,6 +35,15 @@
 </head>
 
 <body>
+  <script>
+    // Check that service workers are registered
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('%PUBLIC_URL%/sw.js');
+      });
+    }
+  </script>
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>

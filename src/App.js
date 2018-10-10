@@ -31,7 +31,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>Bharath is a cool guy.</p>
+          <p>SW Update</p>
           <span>Most recent event {this.state.event}</span>
         </header>
       </div>
