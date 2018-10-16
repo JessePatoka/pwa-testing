@@ -36,7 +36,7 @@ class App extends Component {
           <NavBar />
           <HeaderBar />
           <img src={logo} className="App-logo" alt="logo" />
-          <p>SW Update</p>
+          <p>GH-Pages</p>
           <span>Most recent event {this.state.event}</span>
         </body>
       </div>
