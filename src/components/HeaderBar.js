@@ -16,12 +16,7 @@ const styles = {
 };
 
 function HeaderBar(props) {
-  const { classes } = props,
-    state = {
-      storeNumber: "9999",
-      storeName: "Menomonee Falls",
-      effectiveDate: "July 27th"
-    };
+  const { classes, storeNumber, storeName, effectiveDate } = props;
   return (
     <div
       className={classes.root}
@@ -29,10 +24,10 @@ function HeaderBar(props) {
     >
       <div>
         <Typography variant="body2" align="left" color="textSecondary">
-          {state.storeNumber}
+          {storeNumber}
         </Typography>
         <Typography variant="body2" align="left" color="textSecondary">
-          {state.storeName}
+          {storeName}
         </Typography>
       </div>
       <div>
@@ -41,7 +36,8 @@ function HeaderBar(props) {
         </Typography>
 
         <Typography variant="body2" align="left" color="textSecondary">
-          {state.effectiveDate}
+          {effectiveDate.getMonth() + 1}/{effectiveDate.getDate()}/
+          {effectiveDate.getFullYear()}
         </Typography>
       </div>
     </div>
@@ -49,7 +45,10 @@ function HeaderBar(props) {
 }
 
 HeaderBar.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  storeName: PropTypes.string.isRequired,
+  storeNumber: PropTypes.number.isRequired,
+  effectiveDate: PropTypes.instanceOf(Date).isRequired
 };
 
 export default withStyles(styles)(HeaderBar);

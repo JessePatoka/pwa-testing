@@ -4,6 +4,7 @@ import "./App.css";
 import "typeface-roboto";
 import NavBar from "./components/NavBar";
 import HeaderBar from "./components/HeaderBar";
+import MainDash from "./components/MainDash";
 
 class App extends Component {
   state = {
@@ -34,7 +35,15 @@ class App extends Component {
       <div className="App">
         <body className="App-Body">
           <NavBar />
-          <HeaderBar />
+          <HeaderBar
+            storeNumber={101}
+            storeName="Menomonee Falls"
+            effectiveDate={new Date("4/27/2018")}
+          />
+          <MainDash onHandCount={4800} scannedCount={227} />
+
+          <button onClick="NavigateTicketing()" />
+
           <img src={logo} className="App-logo" alt="logo" />
           <p>GH-Pages</p>
           <span>Most recent event {this.state.event}</span>
