@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import "typeface-roboto";
+import MainPage from "./components/MainPage";
+import FloorpadListPage from "./components/FloorpadListPage";
+import EsignListPage from "./components/EsignListPage";
+import ProductListPage from "./components/ProductListPage";
 import NavBar from "./components/NavBar";
-import HeaderBar from "./components/HeaderBar";
-import MainDash from "./components/MainDash";
+import { Route, HashRouter, Link } from "react-router-dom";
 
 class App extends Component {
   state = {
@@ -33,21 +36,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <body className="App-Body">
-          <NavBar />
-          <HeaderBar
-            storeNumber={101}
-            storeName="Menomonee Falls"
-            effectiveDate={new Date("4/27/2018")}
-          />
-          <MainDash onHandCount={4800} scannedCount={227} />
-
-          <button onClick="NavigateTicketing()" />
-
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>GH-Pages</p>
-          <span>Most recent event {this.state.event}</span>
-        </body>
+        <NavBar />
+        <HashRouter>
+          <body className="App-Body">
+            <Route exact path="/" component={MainPage} />
+            <Route path="/floorpadlistpage" component={FloorpadListPage} />
+            <Route path="/esignlistpage" component={EsignListPage} />
+            <Route path="/productlistpage" component={ProductListPage} />
+            <img src={logo} className="App-logo" alt="logo" />
+            <p>GH-Pages</p>
+            <span>Most recent event {this.state.event}</span>
+          </body>
+        </HashRouter>
       </div>
     );
   }
