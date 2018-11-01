@@ -7,7 +7,7 @@ import FloorpadListPage from "./components/FloorpadListPage";
 import EsignListPage from "./components/EsignListPage";
 import ProductListPage from "./components/ProductListPage";
 import NavBar from "./components/NavBar";
-import { Route, HashRouter, Link } from "react-router-dom";
+import { Route, HashRouter } from "react-router-dom";
 
 class App extends Component {
   state = {
@@ -38,7 +38,7 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <HashRouter>
-          <body className="App-Body">
+          <div className="App-Body">
             <Route exact path="/" component={MainPage} />
             <Route path="/floorpadlistpage" component={FloorpadListPage} />
             <Route path="/esignlistpage" component={EsignListPage} />
@@ -46,7 +46,7 @@ class App extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <p>GH-Pages</p>
             <span>Most recent event {this.state.event}</span>
-          </body>
+          </div>
         </HashRouter>
       </div>
     );
