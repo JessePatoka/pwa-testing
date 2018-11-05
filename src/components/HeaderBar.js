@@ -47,7 +47,7 @@ function HeaderBar(props) {
 HeaderBar.propTypes = {
   classes: PropTypes.object.isRequired,
   storeName: PropTypes.string.isRequired,
-  storeNumber: PropTypes.number.isRequired,
+  storeNumber: PropTypes.string.isRequired,
   effectiveDate: PropTypes.instanceOf(Date).isRequired
 };
 

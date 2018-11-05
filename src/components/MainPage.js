@@ -9,33 +9,55 @@ class MainPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      response: ""
+      priceChangeEvents: {
+        PriceChangeSummary: [
+          {
+            TotalOnHand: 0,
+            TotalScanned: 0,
+            PriceChangeEffectiveDate: null,
+            Store: ""
+          }
+        ],
+        store: { StoreName: "", StoreNumber: "" }
+      },
+      storeNumber: "",
+      storeName: "",
+      ticketingEventDate: "",
+      isLoading: false
     };
   }
 
-  // handlePostMessage = response => {
-  //   const { data } = response;
-  //   const incomingResponse = JSON.parse(data);
-
-  //   if (incomingResponse.Header.ResponseCode === "1") {
-  //     this.setState({
-  //       response: incomingResponse.Data
-  //     });
-  //   }
-  // };
+  handlePostMessage = response => {
+    if (response.Header.ResponseCode === 1) {
+      console.log(response.Data);
+      this.setState({
+        priceChangeEvents: response.Data.PriceChangeEvents,
+        isLoading: false
+      });
+    }
+  };
 
   componentDidMount() {
-    const content = getPriceChangeSummary();
-    console.log(content);
+    this.setState({ isLoading: true });
+
+    getPriceChangeSummary().then(response => this.handlePostMessage(response));
   }
 
   render() {
+    const { priceChangeEvents, isLoading } = this.state;
+    if (isLoading) {
+      return <p>Loading...</p>;
+    }
     return (
       <div>
         <HeaderBar
-          storeNumber={101}
-          storeName="Menomonee Falls"
-          effectiveDate={new Date("4/27/2018")}
+          storeNumber={priceChangeEvents.store.StoreNumber}
+          storeName={priceChangeEvents.store.StoreName}
+          effectiveDate={
+            new Date(
+              priceChangeEvents.PriceChangeSummary[0].PriceChangeEffectiveDate
+            )
+          }
         />
         <MainDash onHandCount={4800} scannedCount={227} />
         <NavLink to="/floorpadlistpage">Navigated Ticketing</NavLink>
