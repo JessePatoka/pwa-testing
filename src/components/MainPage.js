@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import HeaderBar from "./HeaderBar";
 import MainDash from "./MainDash";
 import { NavLink } from "react-router-dom";
-import { getPriceChangeSummary } from "../services/TicketingService";
+import { TicketingFactory } from "../services/TicketingFactory";
 
 class MainPage extends Component {
   constructor(props) {
@@ -20,9 +20,6 @@ class MainPage extends Component {
         ],
         store: { StoreName: "", StoreNumber: "" }
       },
-      storeNumber: "",
-      storeName: "",
-      ticketingEventDate: "",
       isLoading: false
     };
   }
@@ -39,8 +36,15 @@ class MainPage extends Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
+    var factory = new TicketingFactory();
+    var service = factory.getService();
+    //this.handlePostMessage(service.getPriceChangeSummary());
 
-    getPriceChangeSummary().then(response => this.handlePostMessage(response));
+    //this.handlePostMessage(getPriceChangeSummary());
+
+    service
+      .getPriceChangeSummary()
+      .then(response => this.handlePostMessage(response));
   }
 
   render() {
